@@ -1,0 +1,85 @@
+.hover-box {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1000ms ease;
+}
+
+.hover-box:hover {
+    transform: translateX(200px) scale(0.5) rotate(270deg);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.spin-box {
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+
+    animation-name: spin;
+    animation-duration: 5s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    animation-iteration-count: infinite;
+}
+
+.translation-box {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+
+    animation-name: move;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0px, 0px);
+        background-color: green;
+    }
+
+    25% {
+        transform: translate(0px, 300px);
+        background-color: yellow;
+    }
+
+    50% {
+        transform: translate(300px, 300px);
+        background-color: blue;
+    }
+
+    75% {
+        transform: translate(300px, 0px);
+        background-color: grey;
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+        background-color: purple;
+    }
+}
